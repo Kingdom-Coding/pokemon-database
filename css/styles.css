@@ -9,16 +9,49 @@
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
     min-height: 100svh;
-    min-width: 100svw;
     gap: 1em;
+    padding: 50px;
 }
-.pokemonNames {
-    display: flex;
-    height: min-content;
 
+main {
+    display: grid;
+    place-content: center;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+section {
+    container-type: inline-size;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(7, (100px, 1fr));
+    min-height: 100%;
+    width: 80%; 
+    gap: .5em;
+    
+}
+
+.searchBar {
+    grid-column: 1 / 7;
+    width: 200px;
+}
+
+.filter {
+    grid-column: 1 / 7;
+}
+
+.pokemon-card {
+    justify-self: center;
+    height: 200px;
+    width: 150px;
+    background-color: burlywood;
+}
+
+@container ( width > 920 ) {
+    section {
+        grid-template-columns: repeat(7, 1fr);
+    }
+    
 }
