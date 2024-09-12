@@ -1,19 +1,33 @@
 //array of pokemon objects and their key value pairs
 let pokemonList = [
-  { name: "Abomasnow", height: 2.2, types: ["ice", "grass"] },
+  { name: "Bulbasaur", height: 2.04, types: [ 'grass', 'poison'], number: '#0001'},
 
-  { name: "Abra", height: 0.9, types: ["psychic"] },
+  { name: "Ivysaur", height: 3.03, types: ['grass', 'poison'], number: '#0002' },
 
-  { name: "Absol", height: 1.2, types: ["dark"] },
+  { name: "Venusaur", height: 6.07, types: ['grass', 'poison'], number: '#0003' },
 
-  { name: "Accelgor", height: 0.8, types: ["bug"] },
+  { name: "Charmander", height: 2.00, types: ['fire'], number: '#0004' },
 
-  { name: "Aerodactyl", height: 1.8, types: ["rock", "flying"] },
+  { name: "Charmeleon", height: 3.07, types: ['fire'], number: '#0005' },
 
-  { name: "Aggron", height: 2.1, types: ["steel", "rock"] },
+  { name: 'Charizard', height: 5.07, types: ['fire', 'flying'], number: '#0006'},
 
-  { name: "Aipom", height: 0.8, types: ["normal"] },
+  { name: 'Squirtle', height: 1.08, types: ['water'], number: '#0007'},
+  
+  { name: 'Wartortle', height: 3.03, types: ['water'], number: '#0008'}
+
 ];
+
+
+
+
+
+
+
+
+
+
+
 
 //set global variables to access within the for loop
 let tallestPokemon = pokemonList[6];
