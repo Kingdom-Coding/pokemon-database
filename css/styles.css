@@ -17,7 +17,7 @@ body {
     min-width: 100svw;
     gap: 1em;
 }
-.pokemonNames {
+p {
     display: flex;
     height: min-content;
 
