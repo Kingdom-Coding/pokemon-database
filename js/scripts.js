@@ -15,20 +15,6 @@ let pokemonList = [
   { name: "Aipom", height: 0.8, types: ["normal"] },
 ];
 
-//set global variables to access within the for loop
-let message = " - Wow, that's big!";
-
-//for loop to update the tallest pokemon
-for (i = 0; i < pokemonList.length; i++) {
-  let pokemonName = pokemonList[i].name;
-  let pokemonHeight = pokemonList[i].height;
-
-  //conditional that writes the tallest pokemon and the message
-  if (pokemonList[i].height > 2.15) {
-    document.write( `<p>${pokemonName} (height: ${pokemonHeight}) ${message}</p>` );
-    console.log( pokemonList );
-  //writes the rest of the pokemon
-  } else {
-    document.write( `<p>${pokemonName} (height: ${pokemonHeight})</p>` );
-  }
-}
+pokemonList.forEach(function( pokemon ) {
+  ( pokemon.height > 2.15 ) ? document.write(`<p>${pokemon.name} ${pokemon.height} 'Wow, that\'s big!'</p>`) : document.write(`<p>${pokemon.name} ${pokemon.height}</p>`)
+});
