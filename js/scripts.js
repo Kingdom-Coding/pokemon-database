@@ -1,5 +1,6 @@
 //array of pokemon objects and their key value pairs
-let pokemonList = [
+let pokemonRepository = function() {
+  let pokemonList = [
   { name: "Bulbasaur", height: 2.04, types: [ 'grass', 'poison'], number: '#0001'},
 
   { name: "Ivysaur", height: 3.03, types: ['grass', 'poison'], number: '#0002' },
@@ -18,38 +19,35 @@ let pokemonList = [
 
 ];
 
-
-
-
-
-
-
-
-
-
-
-
-//set global variables to access within the for loop
-let tallestPokemon = pokemonList[6];
-let message = "- Wow, that's big!";
-
-//for loop to update the tallest pokemon
-for (i = 0; i < pokemonList.length; i++) {
-  let pokemonName = pokemonList[i].name;
-  let pokemonHeight = pokemonList[i].height;
-
-  //condition to update the tallest pokemon and write it to the DOM
-  if (pokemonHeight > tallestPokemon.height) {
-    tallestPokemon = pokemonList[i];
-    document.write(
-      `<p>${tallestPokemon.name} (height ${tallestPokemon.height}) ${message}</p>`
-    );
-    console.log(tallestPokemon);
+  function getAll() {
+    return pokemonList;
   }
 
-  //writes the names and heights of all the pokemon that are not the tallest
-  if (pokemonList[i] !== tallestPokemon) {
-    document.write(`<p>${pokemonName} (height ${pokemonHeight})</p>`);
-    console.log(pokemonList[i]);
+  function add( pokemon ) {
+    pokemonList.push( pokemon );
   }
+
+  return {
+    getAll: getAll,
+    add: add
+  }
+}();
+
+
+
+pokemonRepository.getAll().forEach( pokemon ) {
+  let pokemonName = pokemon.name;
+  let pokemonHeight = pokemon.height;
+
+  (pokemonHeight > 2.15) ? `$`
 }
+
+
+
+
+
+
+
+
+
+
