@@ -32,10 +32,18 @@ let pokemonRepository = (function() {
 
 pokemonRepository.getAll().forEach( pokemon => {
   let pokemonName = pokemon.name;
-  let pokemonHeight = pokemon.height;
+  let pokemonHeight = pokemon.height; 
+  let pokemonBlock = document.querySelector( '.pokemon-list' );
+  let listItem = document.querySelector( '.list-item' );
+  let button = document.createElement('button');
 
-  (pokemonHeight > 2.15) ? document.write(`<p>${pokemonName} (${pokemonHeight}) - Wow, that\'s big!</p>`) : document.write(`<p>${pokemonName} (${pokemonHeight})</p>`)
-});
+  button.classList.add( 'pokemon-btn' );
+
+  listItem.append( button );
+  pokemonBlock.append( listItem );
+  buttonContent = button.append( `${pokemonName} (${pokemonHeight})` );
+})
+
 
 
 
