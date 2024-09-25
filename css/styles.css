@@ -21,25 +21,41 @@ body {
 
 .pokemon-list {
     display: grid;
+    font-size: 3em;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: fit-content;
+    grid-template-rows: min-content;
     min-height: 100%;
-    min-width: 50%;
-    text-align: center;
-    place-content: center;
-    margin: 0 auto;
+    min-width: min-content;
+    justify-content: center;
     gap: 1em;
+    margin-inline: 5em;
+}
+
+.pokemon-list::before {
+    content: "Pokédex";
+    grid-column: span 7;
+    grid-row: 1 / -1;
+    justify-self: center;
+    font-size: 2em;
 }
 
 .list-item {
-    display: block;
+    display: grid;
+    justify-content: center;
+    margin: 0 auto;
     grid-row: 2;
     min-height: 100%;
     min-width: 100%;
+    row-gap: 1em;
 }
 
 .pokemon-btn {
+    justify-self: center;
+    margin: 0 auto;
     padding: 5px 10px;
     height: 250px;
     width: 200px;
+    font-size: .3em;
+    font-weight: bold;
 }
+
