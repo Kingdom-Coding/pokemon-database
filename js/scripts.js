@@ -35,7 +35,7 @@ let pokemonRepository = (function() {
   function addListItem( { name, height, types } ) {
     //local variables
     let pokemonBlock = document.querySelector( '.pokemon-list' );
-    let listItem = document.querySelector( '.list-item' );
+    let listItem = document.createElement( 'li' );
     let button = document.createElement( 'button' );
     let newPokemon = `${ name } (${ height }) ${ types }`;
     button.append( newPokemon );
@@ -58,7 +58,6 @@ let pokemonRepository = (function() {
     getAll: getAll,
     addListItem: addListItem,
     showDetails: showDetails,
-    customEventListener: customEventListener
   }
 })();
 
