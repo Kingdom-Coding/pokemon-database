@@ -58,7 +58,6 @@ main::before {
         margin: 0 auto;
     }
     ul,li,.pokemon-btn {
-        display: block;
         margin: 0 auto;
     }
 }
@@ -69,7 +68,6 @@ main::before {
         margin: 0 auto;
     }
     ul,li,.pokemon-btn {
-        display: block;
         margin: 0 auto;
     }
 }
