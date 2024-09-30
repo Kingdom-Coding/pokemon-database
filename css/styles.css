@@ -45,14 +45,25 @@ main::before {
 
 
 
-@container ( width < 900px ) {
+@container ( width < 1685px ) {
     main {
         grid-template-columns: repeat( 4, min-content );
     }
     
 }
 
-@container ( width < 420px ) {
+@container ( width < 1135px ) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 auto;
+    }
+    ul,li,.pokemon-btn {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+@container ( width < 620px ) {
     main {
         grid-template-columns: 1fr;
         margin: 0 auto;
