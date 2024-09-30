@@ -6,9 +6,11 @@
 * {
     margin: 0;
     padding: 0;
+    list-style-type: none;
 }
 
 body {
+    container-type: inline-size;
     display: grid;
     min-height: 100svh;
     gap: 1em;
@@ -16,42 +18,47 @@ body {
 }
 
 main {
+    
     display: grid;
+    grid-template-columns: repeat( 6, min-content );
     place-content: center;
     min-height: 100%;
-    min-width: 100%;
+    gap: 1em;
 }
 
-section {
-    container-type: inline-size;
+main::before {
+    content: "Pokédex";
+    grid-column: 1 / -1;
+    font-size: 2.5em;
+    margin: 0 auto;
+    padding-bottom: 1.5em;
+}
+.pokemon-btn {   
     display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(7, (100px, 1fr));
-    min-height: 100%;
-    width: 80%; 
-    gap: .5em;
-    
+    align-items: end;
+    padding-bottom: 2em;
+    font-size: 1em;
+    height: 300px;
+    width: 250px;
+    background-color: bisque;
 }
 
-.searchBar {
-    grid-column: 1 / 7;
-    width: 200px;
-}
 
-.filter {
-    grid-column: 1 / 7;
-}
 
-.pokemon-card {
-    justify-self: center;
-    height: 200px;
-    width: 150px;
-    background-color: burlywood;
-}
-
-@container ( width > 920 ) {
-    section {
-        grid-template-columns: repeat(7, 1fr);
+@container ( width < 900px ) {
+    main {
+        grid-template-columns: repeat( 4, min-content );
     }
     
+}
+
+@container ( width < 420px ) {
+    main {
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+    }
+    ul,li,.pokemon-btn {
+        display: block;
+        margin: 0 auto;
+    }
 }
