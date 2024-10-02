@@ -43,6 +43,19 @@ main::before {
     background-color: bisque;
 }
 
+.loading-message {
+    position: relative;
+    left: 710px;
+    top: 300px;
+    height: 25px;
+    width: 150px;
+    font-size: 1em;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
 
 
 @container ( width < 1685px ) {
