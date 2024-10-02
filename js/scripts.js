@@ -7,20 +7,24 @@ let pokemonRepository = (function() {
   function getAll() { 
     return pokemonList;
   }
+
   //add pokemon to the pokemonList array
   function add( pokemon ) { 
     return pokemonList.push( pokemon );
   }
+
   //console.log the pokemon's details
   function showDetails( pokemon ) { 
     return loadDetails( pokemon ).then(function() {
       console.log( pokemon ); 
     })
   }
+
   //customEventListener
   function customEventListener( element, event ) {  
     return element.addEventListener( 'click', event ); 
   }
+
   //creates structured elements to display the pokemon from pokemonList in a grid of buttons
   function addListItem( pokemon ) {
     let mainElement = document.querySelector( 'main' );//get / create elements
@@ -37,11 +41,32 @@ let pokemonRepository = (function() {
     customEventListener( btn, () => showDetails( pokemon ));//eventListener for displaying the pokemon details
     return newPokemon;//returns the string of the newPokemon & it's details added
   }
+
+  //shows the loading message
+  function showLoadingMessage( message ) {
+    let mainElement = document.querySelector( 'main' );
+    let p = document.createElement( 'p' );
+
+    p.classList.add( 'loading-message' );
+    p.innerHTML = message;
+
+    mainElement.append( p );
+  }
+  //hides the loading message
+  function hideLoadingMessage() {
+    let loadingMessage = document.querySelector( '.loading-message' );
+
+    loadingMessage.style.display = 'none';
+  }
+
   //loads a list of 150 pokemon from the api and their 2 properties of name and their details
   function loadList() {
+    showLoadingMessage( 'please wait' );
     return fetch(pokemonUrl).then( function( response ) {
+      hideLoadingMessage();
       return response.json();
       }).then( function( json ) {
+        
         json.results.forEach( function( item ) {
           let pokemon = {
             name: item.name,
@@ -51,10 +76,12 @@ let pokemonRepository = (function() {
         });
       });
     };
+
     //loads the details of the pokemon from the selected pokemon
     function loadDetails( item ) {
     let url = item.detailsUrl;
     return fetch( url ).then( function( response ) {
+      hideLoadingMessage();
       return response.json();
     }).then( function( details ) {
       item.imageUrl = details.sprites.front_default,
