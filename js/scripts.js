@@ -106,12 +106,10 @@ let pokemonRepository = (function() {
 pokemonRepository.loadList().then( function() {
   //foreach loop to display the pokemon in the DOM and their data
   pokemonRepository.getAll().forEach( function( pokemon ) {
-  pokemonRepository.loadDetails( pokemon ).then( function() {
     pokemonRepository.addListItem( pokemon );
+  })
   }).catch(function( e ) {
     console.error( e );
-  });
-  });
 });
 
 //logs all the pokemon from the pokemonList in the console
