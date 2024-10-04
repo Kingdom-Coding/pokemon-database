@@ -1,86 +1,86 @@
 *::before,
 *::after,
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 * {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 body {
-    container-type: inline-size;
-    display: grid;
-    min-height: 100svh;
-    gap: 1em;
-    padding: 50px;
+  container-type: inline-size;
+  display: grid;
+  min-height: 100svh;
+  gap: 1em;
+  padding: 50px;
 }
 
 main {
-    
-    display: grid;
-    grid-template-columns: repeat( 6, min-content );
-    place-content: center;
-    min-height: 100%;
-    gap: 1em;
+  display: grid;
+  grid-template-columns: repeat(6, min-content);
+  place-content: center;
+  min-height: 100%;
+  gap: 1em;
 }
 
 main::before {
-    content: "Pokédex";
-    grid-column: 1 / -1;
-    font-size: 2.5em;
-    margin: 0 auto;
-    padding-bottom: 1.5em;
+  content: "Pokédex";
+  grid-column: 1 / -1;
+  font-size: 2.5em;
+  margin: 0 auto;
+  padding-bottom: 1.5em;
 }
-.pokemon-btn {   
-    display: grid;
-    align-items: end;
-    padding-bottom: 2em;
-    font-size: 1em;
-    height: 300px;
-    width: 250px;
-    background-color: bisque;
+.pokemon-btn {
+  display: grid;
+  align-items: end;
+  padding-bottom: 2em;
+  font-size: 1em;
+  height: 300px;
+  width: 250px;
+  background-color: bisque;
 }
 
 .loading-message {
-    position: relative;
-    left: 710px;
-    top: 300px;
-    height: 25px;
-    width: 150px;
-    font-size: 1em;
-    text-align: center;
-    border: 2px solid black;
-    border-radius: 10px;
-    background-color: #ffffff;
+  position: relative;
+  left: 710px;
+  top: 300px;
+  height: 25px;
+  width: 150px;
+  font-size: 1em;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #ffffff;
 }
 
-
-
 @container ( width < 1685px ) {
-    main {
-        grid-template-columns: repeat( 4, min-content );
-    }
-    
+  main {
+    grid-template-columns: repeat(4, min-content);
+  }
 }
 
 @container ( width < 1135px ) {
-    main {
-        grid-template-columns: repeat(2, 1fr);
-        margin: 0 auto;
-    }
-    ul,li,.pokemon-btn {
-        margin: 0 auto;
-    }
+  main {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+  }
+  ul,
+  li,
+  .pokemon-btn {
+    margin: 0 auto;
+  }
 }
 
 @container ( width < 620px ) {
-    main {
-        grid-template-columns: 1fr;
-        margin: 0 auto;
-    }
-    ul,li,.pokemon-btn {
-        margin: 0 auto;
-    }
+  main {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+  }
+  ul,
+  li,
+  .pokemon-btn {
+    margin: 0 auto;
+  }
 }
